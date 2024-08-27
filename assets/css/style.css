@@ -1,0 +1,419 @@
+
+body{
+    grid: auto;
+
+	
+}
+
+
+html{
+	
+	scroll-behavior: smooth;
+	transition: 4s;
+ }
+
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing: border-box;
+	
+}
+
+
+
+section{
+	width: 100%;
+	height: 100vh;
+	
+}
+.section1{
+	width: 100%;
+	height: 10vh;
+	
+}
+
+
+
+nav{
+	width: 100%;
+	height: 75px;
+	background-color:black;
+	line-height: 75px;
+	padding:0px 90px;
+	position:fixed;
+	z-index: 1;
+}
+
+nav .logo{
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: 1px; 
+}
+
+nav .logo p{
+	font-family: 'PT Sans Narrow', sans-serif;
+	float: left;
+	color:#22d874;
+	text-transform: uppercase;
+}
+
+nav ul{
+	float: inline-start;
+}
+
+nav ul li{
+	display: inline-block;
+	list-style: none;
+}
+
+nav ul li a{
+	color:#fff;
+	text-decoration: none;
+	font-size: 18px;
+	text-transform: uppercase;
+	padding:0px 28px;
+}
+
+nav ul li a:hover{
+	color:#067c23;
+}
+
+
+
+
+
+h1{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	color: #47db6c;
+	font-size: 50px;
+	text-align: center;
+	padding: 0px;
+	display: block;
+}
+
+h2{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 40px;
+	color: #47db6c;
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+h3{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	color: #47db6c;
+	font-size: 50px;
+	text-align: center;
+	padding-bottom: 25px;
+	
+}
+
+h5{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	color: #47db6c;
+	font-size: 50px;
+	text-align: center;
+	padding-bottom: 130px;
+}
+
+.slide-bottom {
+	-webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+ @-webkit-keyframes slide-bottom {
+	0% {
+	  -webkit-transform: translateY(0);
+			  transform: translateY(0);
+	}
+	100% {
+	  -webkit-transform: translateY(100px);
+			  transform: translateY(100px);
+	}
+  }
+  @keyframes slide-bottom {
+	0% {
+	  -webkit-transform: translateY(0);
+			  transform: translateY(0);
+	}
+	100% {
+	  -webkit-transform: translateY(100px);
+			  transform: translateY(100px);
+	}
+  }
+  
+  /*---extra---*/
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    color: rgb(241, 235, 235);
+	padding-top: 200px;
+  }
+  
+  
+  .form__email {
+    padding: 20px 30px;
+    border-radius: 5px;
+    border: 1px solid #f1eded;
+    width: 431px;
+    font-size: 18px;
+    color: #080808;
+  }
+  
+  
+  
+  .form__button {
+    background: #3D9FFF;
+    padding: 10px;
+    border: none;
+    width: 244px;
+    height: 65px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    
+  }
+  
+   /*---prediction---*/
+  
+	*, *:before, *:after {
+		box-sizing: border-box;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	  }
+	  
+	  
+	  body, button, input {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 700;
+		letter-spacing: 1.4px;
+	  }
+	  
+	  .background {
+		display: flex;
+		min-height: 100vh;
+	  }
+	  
+	  .containers {
+		flex: 0 1 700px;
+		margin: auto;
+		padding: 10px;
+	  }
+	  
+	  .screen {
+		position: relative;
+		background: #3e3e3e;
+		border-radius: 15px;
+		
+	  }
+	  
+	
+	  
+	  .screen-body {
+		display: flex;
+	  }
+	  
+	  .screen-body-item {
+		flex: 1;
+		padding: 50px;
+	  }
+	  
+	  .screen-body-item.left {
+		display: outside;
+		flex-direction: row;
+	  }
+	  
+	
+	  .app-form-group {
+		margin-bottom: 15px;
+	  }
+	  
+	  .app-form-group.buttons {
+		margin-bottom: 0;
+		text-align: left;
+	  }
+	  
+	  .app-form-control {
+		width: 100%;
+		padding: 10px 0;
+		background: none;
+		border: none;
+		border-bottom: 1px solid #666;
+		color: #ddd;
+		font-size: 14px;
+		text-transform: uppercase;
+		outline: none;
+		transition: border-color .2s;
+	  }
+	  
+	 
+	  
+	  .app-form-control:focus {
+		border-bottom-color: rgb(13, 163, 63);
+	  }
+	  
+	  .app-form-button {
+		background: none;
+		border: none;
+		color: #f5f1f3;
+		font-size: 14px;
+		cursor: pointer;
+		outline: none;
+	  }
+	  
+	  .app-form-button:hover {
+		color: #13b93d;
+	  }
+
+	 /*---aa---*/
+	
+	 body {
+		min-height: 100vh;
+		background:black;
+	}
+	
+	.cards{
+		margin: 0 auto;
+		max-width: 950px;
+		display: grid;
+		grid-template-columns: repeat(5,1fr);
+		gap: 20px;
+		padding: auto;
+	}
+	
+	
+	
+	.card {
+		position: relative;
+		border-radius: 50px;
+		overflow: hidden;
+		cursor: pointer;
+		
+	}
+	
+	.card .card-image {
+		width: 100%;
+	}
+	
+	.card .card-image img {
+		width: 100%;
+		max-height: 340px;
+		object-fit: cover;
+	}
+	
+	.card .card-content {
+		position: absolute;
+		bottom: -180px;
+		color: rgb(8, 8, 8);
+		background: rgba(5, 5, 5, 0.2);
+		backdrop-filter: blur(15px);
+		min-height: 100px;
+		width: 100%;
+		transition: bottom .4s ease-in;
+		box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.1);
+		border-top: 1px solid rgba(255, 255, 255, 0.2)
+	}
+	
+	.card:hover .card-content {
+		bottom: 0px
+	}
+	
+	.card:hover .card-content h4,
+	.card:hover .card-content h5 {
+		transform: translateY(10px);
+		opacity: 1
+	}
+	
+	.card .card-content h4,
+	.card .card-content h5 {
+		font-size: 2.1rem;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		text-align: center;
+		transition: 0.8s;
+		font-weight: 400;
+		opacity: 0;
+		transform: translateY(-40px);
+		transition-delay: 0.2s
+	}
+	
+	.card .card-content h5 {
+		transition: 0.5s;
+		font-weight: 600;
+		font-size: medium;
+		font-size: 0.8rem;
+		letter-spacing: 2px
+	}
+
+   /*---ar---*/
+
+   .wrapper {
+	margin: 0 auto;
+	max-width: 1100px;
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
+	gap: 20px;
+	padding: auto;
+}
+
+.profile {
+    position: relative;
+    width: 190px;
+    height: 200px;
+    /*background: url("https://i.imgur.coxm/sAtgYjl.jpg");*/
+    background-size: cover;
+    cursor: pointer;
+   border-radius: 100px;
+    
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 1s;
+    border-top-right-radius: 35px !important;
+    border-radius: 6px
+}
+
+.profile:hover .overlay {
+    opacity: 1
+}
+
+
+.overlay .about {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    top: 40%;
+    color: #fff;
+
+}
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

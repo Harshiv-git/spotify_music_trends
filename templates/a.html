@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Search Song Info</title>
+   
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+       
+   </head>
+   <body>
+    <section class="hero d-flex flex-column justify-content-top align-items-top" id="home"><br>
+        <br>
+        <br>
+            <div class="bg-overlay">
+              
+            <div class="screen-body">
+              
+                  
+                
+                
+              
+            
+            
+            
+            {% for Songs in qs %}
+            
+            <div class="screen-body-item left">
+                <div class="app-form">
+                    <div class="app-form-group">
+                      <label style="font-family:Arial, Helvetica, sans-serif;font-size:medium;color:antiquewhite" >Song name</label><br>
+                      <label style="font-family:Arial, Helvetica, sans-serif;font-size:large;color:antiquewhite">{{Songs.Track_Name}}</label>
+                    </div>
+                    <div class="app-form-group">
+                     <label style="font-family:Arial, Helvetica, sans-serif;font-size:medium;color:antiquewhite">Acousticness</label><br>
+                     <label style="font-family:Arial, Helvetica, sans-serif;font-size:large;color:antiquewhite">{{Songs.Acousticness}}</label>
+                    </div>
+                    <div class="app-form-group">
+                      <label style="font-family:Arial, Helvetica, sans-serif;font-size:medium;color:antiquewhite" >Beats Per Minute</label><br>
+                     <label style="font-family:Arial, Helvetica, sans-serif;font-size:large;color:antiquewhite">{{Songs.Beats_Per_Minute}}</label>
+                    </div>
+                    <div class="app-form-group message">
+                      <label style="font-family:Arial, Helvetica, sans-serif;font-size:medium;color:antiquewhite" >Danceability</label><br>
+                     <label style="font-family:Arial, Helvetica, sans-serif;font-size:large;color:antiquewhite">{{Songs.Danceability}}</label>
+                    </div>
+                   
+                   
+                    
+                </div>  
+              </div>
+
+            <div class="screen-body-item center ">
+                <div class="app-form">
+                  <div class="app-form-group ">
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:medium;color:antiquewhite">Artist Name</label><br>
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:large;color:antiquewhite">{{Songs.Artist_Name}}</label>
+                  </div>
+                  <div class="app-form-group ">
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:medium;color:antiquewhite">Energy</label><br>
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:large;color:antiquewhite">{{Songs.Energy}}</label>
+                  </div>
+                  <div class="app-form-group">
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:medium;color:antiquewhite">Liveness</label><br>
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:large;color:antiquewhite">{{Songs.Liveness}}</label>
+                  </div>
+                  <div class="app-form-group">
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:medium;color:antiquewhite">Loudness</label><br>
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:large;color:antiquewhite">{{Songs.Loudness}}</label>
+                  </div>
+                  
+                </div>  
+              </div>
+              
+            <div class="screen-body-item right align-item-center">
+                <div class="app-form">
+                 
+                  <div class="app-form-group">
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:medium;color:antiquewhite">Genre</label><br>
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:large;color:antiquewhite">{{Songs.Genre}}</label>
+                  </div>
+                  <div class="app-form-group ">
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:medium;color:antiquewhite">Speechiness</label><br>
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:large;color:antiquewhite">{{Songs.Speechiness}}</label>
+                  </div>
+                  <div class="app-form-group ">
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:medium;color:antiquewhite">Valence</label><br>
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:large;color:antiquewhite">{{Songs.Valence}}</label>
+                  </div>
+                  <div class="app-form-group ">
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:medium;color:antiquewhite">Popularity</label><br>
+                    <label style="font-family:Arial, Helvetica, sans-serif;font-size:large;color:antiquewhite">{{Songs.Popularity}}</label>
+                  </div>
+                  
+                </div>
+                
+              
+              </div>
+              {% endfor %}
+              
+              
+            </div>
+            <div class="app-form-group-centre buttons">
+                      <center>
+                <a class="app-form-button" href="/" >HOME</a>
+              </center>
+              </div>
+            </div>
+            
+     </section>
+</body>
+</html>

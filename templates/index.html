@@ -1,0 +1,343 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SPOTIFY MUSIC TREND</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initaial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Yanone+Kaffeesatz:wght@300;400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<section>
+	<nav>
+		<div class="logo">
+			<a href="/"><p>spotify music trend</p></a>
+		</div>
+		<ul>
+			<li><a href="#home">home</a></li>
+			<li><a href="#prediction">Prediction</a></li>
+			<li><a href="#topsongs">top songs</a></li>
+			<li><a href="#topartist">top artist</a></li>
+			<li><a href="https://newsroom.spotify.com/news/" target="_blank">news</a></li>
+			{% if user.is_authenticated %}
+			<li><a href="accounts/logout">Logout</a></li>
+			{% endif %}
+		</ul>
+	</nav>
+</section>
+
+	
+
+	<section  id="home">
+
+		<h1 class="slide-bottom">WELCOME TO </h1>
+		<h1 class="slide-bottom">SPOTIFY MUSIC TREND</h1>
+		<form action="{% url 'dashboard' %}" method="post">
+			{% csrf_token %}
+		<div class="subscribe">
+				<h2>SEARCH YOUR SONG HERE</h2>
+				<input type="text" class="form__email" placeholder="Enter song name" name="query" id="search" />
+				<br>
+				<button class="form__button" type="submit" value="SEARCH" >SEARCH</button>
+			
+		</div>
+	</form>
+	</section>
+
+	<section id="prediction">
+		
+		<h3 class="slide-bottom">PREDICT THE SONG HERE</h3>
+	   
+		<div class="background">
+			<div class="containers">
+			  <div class="screen">
+				<div class="screen-header">
+				  <div class="screen-header-left">
+				  </div>
+				</div>
+				<div class="screen-body">
+				  <div class="screen-body-item left">
+					<div class="app-form">
+						<form action="{% url 'predicty' %}" method="post">
+							{% csrf_token %}
+						<div class="app-form-group">
+						  <input class="app-form-control" name="acousticness" placeholder="acousticness">
+						</div>
+						<div class="app-form-group">
+						  <input class="app-form-control" name="danceability" placeholder="danceability">
+						</div>
+						<div class="app-form-group">
+						  <input class="app-form-control"  name="duration_ms" placeholder="duration_ms">
+						</div>
+						<div class="app-form-group message">
+						  <input class="app-form-control" name="energy" placeholder="energy">
+						</div>
+						<div class="app-form-group message">
+						  <input class="app-form-control" name="explicit" placeholder="explicit">
+						</div>
+						<div class="app-form-group message">
+						  <input class="app-form-control" name="instrumentalness" placeholder="Instrumentalness">
+						</div>
+						<div class="app-form-group message">
+						  <input class="app-form-control" name="key" placeholder="key">
+						</div>
+						
+					</div>  
+				  </div>
+				  <div class="screen-body-item">
+					<div class="app-form">
+					  <div class="app-form-group">
+						<input class="app-form-control" name="liveness" placeholder="liveness">
+					  </div>
+					  <div class="app-form-group">
+						<input class="app-form-control" name="loudness" placeholder="loudness">
+					  </div>
+					  <div class="app-form-group">
+						<input class="app-form-control" name="mode" placeholder="mode">
+					  </div>
+					  <div class="app-form-group message">
+						<input class="app-form-control" name="speechiness" placeholder="speechiness">
+					  </div>
+					  <div class="app-form-group message">
+						<input class="app-form-control" name="tempo" placeholder="tempo">
+					  </div>
+					  <div class="app-form-group message">
+						<input class="app-form-control" name="valence" placeholder="valence">
+					  </div>
+					  <div class="app-form-group buttons">
+						  {% if ans is none %}
+						  
+						<button class="app-form-button">CANCEL</button>
+						<input class="app-form-button" type="submit" value="SEND" id="predict" />
+                           {% else %}
+						  <font color="white"> <h4>{{ans}}</h4></font>
+						   
+						   <meta http-equiv = "refresh" content = "10"; url = "http://127.0.0.1:8000/" />
+						
+						   {% endif %}     
+                              </form>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+		
+			</div>
+		  </div>
+		</div>
+	   </div>
+</section>
+	
+<section id="topsongs">
+<h5 class="slide-bottom">TOP SONGS</h5>
+<a href="https://open.spotify.com/track/58Mh6zmqSo9IvysPAXnG0h?si=493f9320bc8d414e" target="_blank">
+<div class="cards">
+	<div class="col-lg-4">
+		<div class="card p-0">
+			<div class="card-image"> <img src="{% static 'image/1.jfif' %}" alt=""> </div>
+			<div class="card-content d-flex flex-column align-items-center">
+				<h4 class="pt-2">#1 </h4>
+				<h5>CHANGE YOUR MIND</h5>
+			</div>
+		</div>
+	</div>
+</a>
+	<div class="col-lg-4">
+		<div class="card p-0">
+			<div class="card-image"> <img src="{% static 'image/2.jfif' %}" alt=""> </div>
+			<div class="card-content d-flex flex-column align-items-center">
+				<h4 class="pt-2">#2</h4>
+				<h5>SOULS THAT LEAVE US TO SOON </h5>
+			</div>
+		</div>
+	</div>
+	<a href="https://open.spotify.com/track/2nM7VjLc9rkb9c0WzoiwOA?si=6af2386fc63145e1" target="_blank">
+	<div class="col-lg-4">
+		<div class="card p-0">
+			<div class="card-image"> <img src="{% static 'image/3.jfif' %}" alt=""> </div>
+			<div class="card-content d-flex flex-column align-items-center">
+				<h4 class="pt-2">#3</h4>
+				<h5>HOLD SOMEBODY </h5>
+			</div>
+		</div>
+	</div>
+	</a>
+	<div class="col-lg-4">
+		<div class="card p-0">
+			<div class="card-image"> <img src="{% static 'image/4.jfif' %}" alt=""> </div>
+			<div class="card-content d-flex flex-column align-items-center">
+				<h4 class="pt-2">#4</h4>
+				<h5>SOUR PATCH KIDS </h5>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="card p-0">
+			<div class="card-image"> <img src="{% static 'image/5.jfif' %}" alt=""> </div>
+			<div class="card-content d-flex flex-column align-items-center">
+				<h4 class="pt-2">#5</h4>
+				<h5>HEAT WAVES </h5>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="card p-0">
+			<div class="card-image"> <img src="{% static 'image/6.jfif' %}" alt=""> </div>
+			<div class="card-content d-flex flex-column align-items-center">
+				<h4 class="pt-2">#6</h4>
+				<h5>ENEMY </h5>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="card p-0">
+			<div class="card-image"> <img src="{% static 'image/7.jfif' %}" alt=""> </div>
+			<div class="card-content d-flex flex-column align-items-center">
+				<h4 class="pt-2">#7</h4>
+				<h5>LAST ONE STANDING </h5>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="card p-0">
+			<div class="card-image"> <img src="{% static 'image/8.jfif' %}" alt=""> </div>
+			<div class="card-content d-flex flex-column align-items-center">
+				<h4 class="pt-2">#8</h4>
+				<h5>IM USED TO IT </h5>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="card p-0">
+			<div class="card-image"> <img src="{% static 'image/9.jfif' %}" alt=""> </div>
+			<div class="card-content d-flex flex-column align-items-center">
+				<h4 class="pt-2">#9</h4>
+				<h5>SUPERCUTS </h5>
+			</div>
+		</div>
+	</div>
+	<a href="https://open.spotify.com/track/57RA3JGafJm5zRtKJiKPIm?si=41826a3f790f4670" target="_blank">
+	<div class="col-lg-4">
+		<div class="card p-0">
+			<div class="card-image"> <img src="{% static 'image/10.jfif' %}" alt=""> </div>
+			<div class="card-content d-flex flex-column align-items-center">
+				<h4 class="pt-2">#10</h4>
+				<h5>ARE YOU BORED YET </h5>
+			</div>
+		</div>
+	</div>
+</div>
+</a>
+</section>
+
+
+<section id="topartist">
+	<h5 class="slide-bottom">TOP ARTIST</h5>
+<div class="wrapper">
+	<a href="https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ?si=X9wy8FqvQ_uFxKLHC0N2wA" target="_blank">
+		<div class="profile" style="background-image: url('../static/image/1.1 The weeknd.jpg')">
+			<div class="overlay">
+				<div class="about d-flex flex-column">
+					<h4>#1</h4> <span>The Weeknd</span>
+				</div>
+			</div>
+		</div>
+	</a>
+	
+		<a href="https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s?si=PuRo9o6MS_We1VfDJXfh8g" target="_blank">
+		<div class="profile" style="background-image: url('../static/image/2 Justin Bieber.jpg')">
+			<div class="overlay">
+				<div class="about d-flex flex-column">
+					<h4>#2</h4> <span>Justin Bieber</span>
+				</div>
+			</div>
+		</div>
+	</a>
+		<a href="https://open.spotify.com/artist/6eUKZXaKkcviH0Ku9w2n3V?si=AM_91ZcVTLCy9AmoXt-r0w" target="_blank">
+		<div class="profile" style="background-image: url('../static/image/3 Ed Sheeran.jpg')">
+			<div class="overlay">
+				<div class="about d-flex flex-column">
+					<h4>#3</h4> <span>Ed Sheeran</span>
+				</div>
+			</div>
+		</div>
+	</a>
+
+		<a href="https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we?si=aORvMp3hT0yFD3_D2QRBQw" target="_blank">
+		<div class="profile" style="background-image: url('../static/image/4DuaLipa.jpg')">
+			<div class="overlay">
+				<div class="about d-flex flex-column">
+					<h4>#4</h4> <span>Dua Lipa</span>
+				</div>
+			</div>
+		</div>
+	</a>
+
+		<a href="https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02?si=FP48dKJXQyikYjVKkPZrLA" target="_blank">
+		<div class="profile" style="background-image: url('../static/image/5.1 Taylor swift.jpg')">
+			<div class="overlay">
+				<div class="about d-flex flex-column">
+					<h4>#5</h4> <span>Taylor Swift</span>
+				</div>
+			</div>
+		</div>
+	</a>
+
+		<a href="https://open.spotify.com/artist/4gzpq5DPGxSnKTe4SA8HAU?si=Loz3oisUS_awqqgKjkdneQ" target="_blank">
+		<div class="profile" style="background-image: url('../static/image/6 Cold play.jpg')">
+			<div class="overlay">
+				<div class="about d-flex flex-column">
+					<h4>#6</h4> <span>Coldplay</span>
+				</div>
+			</div>
+		</div>
+		</a>
+
+		<a href="https://open.spotify.com/artist/53XhwfbYqKCa1cC15pYq2q?si=NIlF2ckOQMWCV4bWpYmEwA" target="_blank">
+		<div class="profile" style="background-image: url('../static/image/7 Imagine Dragons.jpg')">
+			<div class="overlay">
+				<div class="about d-flex flex-column">
+					<h4>#7</h4> <span>Imagine Dragons</span>
+				</div>
+			</div>
+		</div>
+	</a>
+		<a href="https://open.spotify.com/artist/4dpARuHxo51G3z768sgnrY?si=2qZBq8PUS5axgFMYVWpPdQ" target="_blank">
+		<div class="profile" style="background-image: url('../static/image/8 Adele .jpg')">
+			<div class="overlay">
+				<div class="about d-flex flex-column">
+					<h4>#8</h4> <span>Adele</span>
+				</div>
+			</div>
+		</div>
+		</a>
+
+		<a href="https://open.spotify.com/artist/5cj0lLjcoR7YOSnhnX0Po5?si=BWozMfP-Szm4giW1N4MsNw" target="_blank">
+		<div class="profile" style="background-image: url('../static/image/9 Doja cat.jpg')">
+			<div class="overlay">
+				<div class="about d-flex flex-column">
+					<h4>#9</h4> <span>Doja Cat</span>
+				</div>
+			</div>
+		</div>
+	</a>
+		<a href="https://open.spotify.com/artist/7dGJo4pcD2V6oG8kP0tJRR?si=pR9QdnTCRhCipCSHinR18g" target="_blank">
+		<div class="profile" style="background-image: url('../static/image/10 Eminem.jpg')">
+			<div class="overlay">
+				<div class="about d-flex flex-column">
+					<h4>#10</h4> <span>Eminem</span>
+				</div>
+			</div>
+		</div>
+		</a>
+</div>
+
+</section>
+
+
+</body>
+</html>
